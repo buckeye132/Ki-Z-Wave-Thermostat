@@ -111,7 +111,7 @@ def parse(String description)
     }
 
     def result = [map]
-    if (map.isStateChange && map.name in ["heatingSetpoint","thermostatMode"]) {
+    if (map.name in ["heatingSetpoint","thermostatMode"]) {
         def map2 = [
                 name: "thermostatSetpoint",
                 unit: getTemperatureScale()
