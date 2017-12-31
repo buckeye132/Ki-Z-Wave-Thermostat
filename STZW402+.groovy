@@ -350,6 +350,7 @@ def setHeatingSetpoint(preciseDegrees, delay = 0) {
     }
 	
 	sendEvent(name: "heatingSetpoint", value: degrees, unit: locationScale)
+    sendEvent(name: "thermostatSetpoint", value: degrees, unit: locationScale)
 
     delayBetween([
             zwave.thermostatSetpointV2.thermostatSetpointSet(setpointType: 1, scale: deviceScale, precision: p, scaledValue: convertedDegrees).format(),
